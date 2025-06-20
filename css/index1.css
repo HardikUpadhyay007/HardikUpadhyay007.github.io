@@ -1,0 +1,33 @@
+h1,
+h3 {
+    background-color: yellow;
+    color: blue;
+}
+
+.c1 {
+    background-color: pink;
+    color: maroon;
+}
+
+#dvBox {
+    background-color: teal;
+    color: white;
+}
+
+.main {
+    border: 1px solid blue;
+}
+
+.main div {
+    background-color: red;
+    color: white;
+}
+
+.parent {
+    background-color: gray;
+}
+.parent .child {
+    background-color: pink;
+    padding: 20px;
+    margin: 20px;
+}
