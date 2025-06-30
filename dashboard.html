@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hardik - Developer Portfolio</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                background: #f8f9fa;
+                min-height: 100vh;
+                padding: 20px;
+                color: #333;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+                color: #000;
+            }
+
+            .header h1 {
+                font-size: 3rem;
+                margin-bottom: 10px;
+                font-weight: 300;
+                letter-spacing: -1px;
+            }
+
+            .header p {
+                font-size: 1.1rem;
+                opacity: 0.6;
+                font-weight: 300;
+            }
+
+            .bento-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-auto-rows: 200px;
+                gap: 15px;
+                margin-bottom: 40px;
+            }
+
+            .bento-item {
+                background: #fff;
+                border-radius: 12px;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-decoration: none;
+                color: inherit;
+                transition: all 0.2s ease;
+                border: 1px solid #e9ecef;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .bento-item:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+                border-color: #dee2e6;
+            }
+
+            .bento-item.large {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .bento-item.tall {
+                grid-row: span 2;
+            }
+
+            .bento-item.portfolio {
+                background: #000;
+                color: #fff;
+                border: none;
+            }
+
+            .bento-item.current-portfolio {
+                background: #343a40;
+                color: #fff;
+                border: none;
+            }
+
+            .bento-item.projects {
+                background: #6c757d;
+                color: #fff;
+                border: none;
+            }
+
+            .bento-item.files {
+                background: #f8f9fa;
+                border: 2px solid #dee2e6;
+            }
+
+            .bento-item.assignments {
+                background: #e9ecef;
+                border: 1px solid #ced4da;
+            }
+
+            .bento-item h2 {
+                font-size: 1.6rem;
+                margin-bottom: 12px;
+                font-weight: 400;
+                letter-spacing: -0.5px;
+            }
+
+            .bento-item h3 {
+                font-size: 1.3rem;
+                margin-bottom: 8px;
+                font-weight: 400;
+                letter-spacing: -0.3px;
+            }
+
+            .bento-item p {
+                opacity: 0.8;
+                line-height: 1.5;
+                font-weight: 300;
+                font-size: 0.95rem;
+            }
+
+            .bento-item ul {
+                list-style: none;
+                margin-top: 12px;
+            }
+
+            .bento-item li {
+                padding: 6px 0;
+                opacity: 0.9;
+                font-size: 0.9rem;
+                font-weight: 300;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .bento-item.files li,
+            .bento-item.assignments li {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .bento-item li:last-child {
+                border-bottom: none;
+            }
+
+            .icon {
+                font-size: 1.5rem;
+                margin-bottom: 12px;
+                opacity: 0.8;
+            }
+
+            /* Minimal accent lines */
+            .bento-item.portfolio::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: #fff;
+            }
+
+            .bento-item.current-portfolio::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: #adb5bd;
+            }
+
+            @media (max-width: 768px) {
+                .bento-grid {
+                    grid-template-columns: 1fr;
+                    grid-auto-rows: 180px;
+                    gap: 12px;
+                }
+
+                .bento-item.large {
+                    grid-column: span 1;
+                }
+
+                .header h1 {
+                    font-size: 2.2rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Hardik</h1>
+                <p>Full Stack Developer</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Portfolio Section -->
+                <a
+                    href="portfolio/index.html"
+                    class="bento-item portfolio large"
+                >
+                    <div class="icon">—</div>
+                    <h2>Portfolio</h2>
+                    <p>Creative work and development projects showcase</p>
+                </a>
+
+                <!-- Current Portfolio -->
+                <a
+                    href="https://hardikkupadhyay.vercel.app"
+                    class="bento-item current-portfolio"
+                >
+                    <div class="icon">↗</div>
+                    <h3>Live Site</h3>
+                    <p>Current deployed portfolio</p>
+                </a>
+
+                <!-- Projects Section -->
+                <div class="bento-item projects tall">
+                    <div class="icon">□</div>
+                    <h3>Projects</h3>
+                    <ul>
+                        <li>
+                            <a
+                                href="p1/index.html"
+                                style="color: inherit; text-decoration: none"
+                                >Banking Application</a
+                            >
+                        </li>
+                        <li>Shopping Cart System</li>
+                        <li>Web Components</li>
+                    </ul>
+                </div>
+
+                <!-- Files Section -->
+                <a href="js/index.html" class="bento-item files">
+                    <div class="icon">{ }</div>
+                    <h3>JavaScript</h3>
+                    <p>Interactive demos and scripts</p>
+                </a>
+
+                <a href="html/index.html" class="bento-item files">
+                    <div class="icon">< ></div>
+                    <h3>HTML</h3>
+                    <p>Markup structure examples</p>
+                </a>
+
+                <a href="css/index.html" class="bento-item files">
+                    <div class="icon">#</div>
+                    <h3>CSS</h3>
+                    <p>Styling demonstrations</p>
+                </a>
+
+                <!-- Assignments Section -->
+            </div>
+        </div>
+    </body>
+</html>

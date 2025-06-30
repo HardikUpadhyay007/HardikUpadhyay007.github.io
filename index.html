@@ -3,265 +3,160 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Hardik - Developer Portfolio</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            body {
-                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-                background: #f8f9fa;
-                min-height: 100vh;
-                padding: 20px;
-                color: #333;
-            }
-
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-
-            .header {
-                text-align: center;
-                margin-bottom: 40px;
-                color: #000;
-            }
-
-            .header h1 {
-                font-size: 3rem;
-                margin-bottom: 10px;
-                font-weight: 300;
-                letter-spacing: -1px;
-            }
-
-            .header p {
-                font-size: 1.1rem;
-                opacity: 0.6;
-                font-weight: 300;
-            }
-
-            .bento-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                grid-auto-rows: 200px;
-                gap: 15px;
-                margin-bottom: 40px;
-            }
-
-            .bento-item {
-                background: #fff;
-                border-radius: 12px;
-                padding: 30px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                text-decoration: none;
-                color: inherit;
-                transition: all 0.2s ease;
-                border: 1px solid #e9ecef;
-                position: relative;
-                overflow: hidden;
-            }
-
-            .bento-item:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-                border-color: #dee2e6;
-            }
-
-            .bento-item.large {
-                grid-column: span 2;
-                grid-row: span 1;
-            }
-
-            .bento-item.tall {
-                grid-row: span 2;
-            }
-
-            .bento-item.portfolio {
-                background: #000;
-                color: #fff;
-                border: none;
-            }
-
-            .bento-item.current-portfolio {
-                background: #343a40;
-                color: #fff;
-                border: none;
-            }
-
-            .bento-item.projects {
-                background: #6c757d;
-                color: #fff;
-                border: none;
-            }
-
-            .bento-item.files {
-                background: #f8f9fa;
-                border: 2px solid #dee2e6;
-            }
-
-            .bento-item.assignments {
-                background: #e9ecef;
-                border: 1px solid #ced4da;
-            }
-
-            .bento-item h2 {
-                font-size: 1.6rem;
-                margin-bottom: 12px;
-                font-weight: 400;
-                letter-spacing: -0.5px;
-            }
-
-            .bento-item h3 {
-                font-size: 1.3rem;
-                margin-bottom: 8px;
-                font-weight: 400;
-                letter-spacing: -0.3px;
-            }
-
-            .bento-item p {
-                opacity: 0.8;
-                line-height: 1.5;
-                font-weight: 300;
-                font-size: 0.95rem;
-            }
-
-            .bento-item ul {
-                list-style: none;
-                margin-top: 12px;
-            }
-
-            .bento-item li {
-                padding: 6px 0;
-                opacity: 0.9;
-                font-size: 0.9rem;
-                font-weight: 300;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .bento-item.files li,
-            .bento-item.assignments li {
-                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            }
-
-            .bento-item li:last-child {
-                border-bottom: none;
-            }
-
-            .icon {
-                font-size: 1.5rem;
-                margin-bottom: 12px;
-                opacity: 0.8;
-            }
-
-            /* Minimal accent lines */
-            .bento-item.portfolio::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 3px;
-                background: #fff;
-            }
-
-            .bento-item.current-portfolio::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 3px;
-                background: #adb5bd;
-            }
-
-            @media (max-width: 768px) {
-                .bento-grid {
-                    grid-template-columns: 1fr;
-                    grid-auto-rows: 180px;
-                    gap: 12px;
-                }
-
-                .bento-item.large {
-                    grid-column: span 1;
-                }
-
-                .header h1 {
-                    font-size: 2.2rem;
-                }
-            }
-        </style>
+        <title>Hardik - Portfolio</title>
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <div class="container">
-            <div class="header">
-                <h1>Hardik</h1>
-                <p>Full Stack Developer</p>
+        <nav class="navbar">
+            <div class="brand">Hardik</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
             </div>
+        </nav>
 
-            <div class="bento-grid">
-                <!-- Portfolio Section -->
-                <a
-                    href="portfolio/index.html"
-                    class="bento-item portfolio large"
-                >
-                    <div class="icon">—</div>
-                    <h2>Portfolio</h2>
-                    <p>Creative work and development projects showcase</p>
-                </a>
-
-                <!-- Current Portfolio -->
-                <a
-                    href="https://hardikkupadhyay.vercel.app"
-                    class="bento-item current-portfolio"
-                >
-                    <div class="icon">↗</div>
-                    <h3>Live Site</h3>
-                    <p>Current deployed portfolio</p>
-                </a>
-
-                <!-- Projects Section -->
-                <div class="bento-item projects tall">
-                    <div class="icon">□</div>
-                    <h3>Projects</h3>
-                    <ul>
-                        <li>
-                            <a
-                                href="p1/index.html"
-                                style="color: inherit; text-decoration: none"
-                                >Banking Application</a
-                            >
-                        </li>
-                        <li>Shopping Cart System</li>
-                        <li>Web Components</li>
-                    </ul>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hardik Upadhyay</h1>
+                    <h2>MERN Stack Developer</h2>
+                    <p>
+                        Building modern web applications with clean code and
+                        thoughtful design using MongoDB, Express.js, React, and
+                        Node.js.
+                    </p>
+                    <a href="#projects" class="btn">View Work</a>
                 </div>
-
-                <!-- Files Section -->
-                <a href="js/index.html" class="bento-item files">
-                    <div class="icon">{ }</div>
-                    <h3>JavaScript</h3>
-                    <p>Interactive demos and scripts</p>
-                </a>
-
-                <a href="html/index.html" class="bento-item files">
-                    <div class="icon">< ></div>
-                    <h3>HTML</h3>
-                    <p>Markup structure examples</p>
-                </a>
-
-                <a href="css/index.html" class="bento-item files">
-                    <div class="icon">#</div>
-                    <h3>CSS</h3>
-                    <p>Styling demonstrations</p>
-                </a>
-
-                <!-- Assignments Section -->
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        <span>{ }</span>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2>Selected Work</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-number">01</div>
+                        <h3>Banking Application</h3>
+                        <p>
+                            Full-stack banking system with user authentication,
+                            transaction management, and real-time balance
+                            tracking.
+                        </p>
+                        <a href="../p1/index.html" class="project-link"
+                            >View Project →</a
+                        >
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-number">02</div>
+                        <h3>Shopping Cart</h3>
+                        <p>
+                            Interactive e-commerce cart system with product
+                            management, quantity controls, and checkout
+                            functionality.
+                        </p>
+                        <a
+                            href="../js/shopping-cart/index.html"
+                            class="project-link"
+                            >View Project →</a
+                        >
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-number">03</div>
+                        <h3>Coming Soon</h3>
+                        <p>
+                            Next project in development. Stay tuned for updates
+                            on this exciting new application.
+                        </p>
+                        <span class="project-link disabled">In Progress</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>React</li>
+                            <li>JavaScript</li>
+                            <li>HTML5 & CSS3</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <ul>
+                            <li>Node.js</li>
+                            <li>Express.js</li>
+                            <li>MongoDB</li>
+                            <li>RESTful APIs</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Tools</h3>
+                        <ul>
+                            <li>Git & GitHub</li>
+                            <li>VS Code</li>
+                            <li>Postman</li>
+                            <li>Chrome DevTools</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="contact-content">
+                    <p>
+                        Let's discuss your next project or collaboration
+                        opportunity.
+                    </p>
+                    <div class="contact-links">
+                        <a
+                            href="mailto:hardikupadhyayknp123@gmail.com"
+                            class="contact-link"
+                        >
+                            Email →
+                        </a>
+                        <a
+                            href="https://linkedin.com/in/hardikkupadhyay"
+                            target="_blank"
+                            class="contact-link"
+                        >
+                            LinkedIn →
+                        </a>
+                        <a
+                            href="https://github.com/HardikUpadhyay007"
+                            target="_blank"
+                            class="contact-link"
+                        >
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 Hardik Upadhyay. All rights reserved.</p>
+            </div>
+        </footer>
     </body>
 </html>
